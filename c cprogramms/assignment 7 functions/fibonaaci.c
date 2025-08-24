@@ -3,24 +3,22 @@
 void fib(int num){
     int first=0;
     int second=1;
-    printf("%d %d", first,second);
-    int next=second;
+    printf("%d  %d ", first,second);
+    int next=first +second;
 
-    while(second<num){
+    while(next<=num){
 
-        next =first +second;
-        printf("%d",next);
-        printf("\t");
-        // next=second;
+        printf("%d  ",next);
         first=second;
         second= next;
+        next =first +second;
         
     }
 }
 
 int main(){
     int num;
-    printf("enter the nth term till which you want to have the fibonaaci series \n");
+    printf("enter the number till which you want to have the fibonaaci series \n");
     scanf("%d",&num);
 
     fib(num);

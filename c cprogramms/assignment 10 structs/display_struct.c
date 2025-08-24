@@ -20,7 +20,7 @@ int main(){
         scanf("%s",students[i].name);
 
         printf("enter the roll no \n");
-        scanf("&d",&students[i].roll_no);
+        scanf("%d",&students[i].roll_no);
         
 
 
@@ -29,9 +29,10 @@ int main(){
     } 
 
     for(int i=0;i<5;i++){
-        printf("roll no is %d \n",&students[i]);
-        printf("name is %s \n",&students[i]);
-        printf("marks are %d \n",&students[i]);
+        printf("--------------------------------------\n");
+        printf("roll no is %d \n",students[i].roll_no);
+        printf("name is %s \n",students[i].name);
+        printf("marks are %d \n",students[i].marks);
     }
 
 
