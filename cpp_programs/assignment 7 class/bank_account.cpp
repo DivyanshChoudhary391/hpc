@@ -23,31 +23,31 @@ class bank_account{
     public:
     void get_account_number(){
         cout<<"enter the account number "<<endl;
-        cin<<account_number;
+        cin>>account_number;
 
     }
     void set_account_number(){
-        cout<<account_number;
+        cout<<"account number is "<<account_number<<endl;
     }
     void get_account_holder(){
         cout<<"enter the account holder name "<<endl;
-        cin<<name;
+        cin>>name;
 
     }
     void set_account_holder(){
-        cout<<name;
+        cout<<"name is"<<name<<endl;
     }
     void get_current_balance(){
-        cout<<current_balance;
+        cout<<"current balance is"<<current_balance<<endl;
     }
 
     void deposit(int depo){
         current_balance=current_balance+depo;
-        cout<<current_balance;
+        cout<<"current balance is "<<current_balance<<endl;
     }
     void withdrawal(int with){
         current_balance=current_balance-with;
-        cout<<current_balance;
+        cout<<"current balance is"<<current_balance<<endl;
     }
 
 
@@ -55,7 +55,7 @@ class bank_account{
 };
 
 int main(){
-    bank_account acount1;
+    bank_account account1;
     account1.get_account_number();
     account1.set_account_number();
     account1.get_account_holder();
