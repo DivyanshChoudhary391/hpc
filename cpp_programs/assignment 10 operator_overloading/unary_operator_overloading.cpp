@@ -1,53 +1,62 @@
-// Implement unary operators using operator overloading
-#include <iostream>
+// Implement unary operators using operator overloading and member functions
+#include <bits/stdc++.h>
 using namespace std;
 
-class unary {
+class Pair {
 private:
-    int n1;
-    int n2;
+    int a, b;
 
 public:
-    // Constructor (default + parameterized)
-    unary(int x = 1, int y = 2) {
-        n1 = x;
-        n2 = y;
+    // Parameterised constructor (default values = 0)
+    Pair(int x = 0, int y = 0) {
+        a = x;
+        b = y;
+    }
+
+    // Overloading the prefix ++ operator
+    Pair operator++() {
+        Pair temp;         // create a new object
+        temp.a = ++a;      // increment both
+        temp.b = ++b;
+        return temp;       // return the new object
+    }
+
+    // Overloading the prefix -- operator
+    Pair operator--() {
+        Pair temp;
+        temp.a = --a;      // decrement both
+        temp.b = --b;
+        return temp;
     }
 
     // Display function
     void display() {
-        cout << "First number: " << n1 << endl;
-        cout << "Second number: " << n2 << endl;
-    }
-
-    // Member function for overloading prefix ++
-    unary operator++() {
-        ++n1;
-        ++n2;
-        return *this; // return updated object
-    }
-
-    // Member function for overloading prefix --
-    unary operator--() {
-        --n1;
-        --n2;
-        return *this;
+        cout << "a = " << a << ", b = " << b << endl;
     }
 };
 
+// Driver code
 int main() {
-    unary u1(5, 10);
+    Pair p1(5, 10);
 
-    cout << "Original values:" << endl;
-    u1.display();
+    cout << "Before increment: ";
+    p1.display();
 
-    cout << "\nAfter prefix ++ :" << endl;
-    ++u1; // calls operator++()
-    u1.display();
+    // Using the pre-increment operator
+    Pair p2 = ++p1;
+    cout << "After pre increment (new object): ";
+    p2.display();
 
-    cout << "\nAfter prefix -- :" << endl;
-    --u1; // calls operator--()
-    u1.display();
+    cout << "Original object after increment: ";
+    p1.display();
+
+    // Using the pre-decrement operator
+    Pair p3 = --p1;
+    cout << "After pre decrement (new object): ";
+    p3.display();
+
+    cout << "Original object after decrement: ";
+    p1.display();
 
     return 0;
 }
