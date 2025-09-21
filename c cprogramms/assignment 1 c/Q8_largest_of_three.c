@@ -1,3 +1,5 @@
+// 8. Write a program, which will find out the largest of three inputs given by the user ,
+// only use if and else if ladder .
 # include <stdio.h>
 
 int main(){
